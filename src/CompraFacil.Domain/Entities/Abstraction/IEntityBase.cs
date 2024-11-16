@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CompraFacil.Domain.Entities.Abstraction;
 
-namespace CompraFacil.Domain.Entities.Abstraction;
-internal interface IEntityBase
+public interface IEntityBase
 {
+
 }

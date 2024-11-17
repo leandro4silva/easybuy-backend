@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
     <Folder Include="Models\Responses\" />
   </ItemGroup>
 
@@ -24,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CompraFacil.Domain\CompraFacil.Domain.csproj" />
+    <ProjectReference Include="..\CompraFacil.Infra\CompraFacil.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

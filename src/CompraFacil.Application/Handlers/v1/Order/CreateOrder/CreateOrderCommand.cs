@@ -10,7 +10,7 @@ public sealed class CreateOrderCommand : IRequest<CreateOrderResult>
     public CustomerRequest? Customer { get; set; }
 
     [JsonPropertyName("orderItems")]
-    public List<OrderItemRequest>? OrderItems { get; set; }
+    public List<OrderItemRequest>? Items { get; set; }
 
     [JsonPropertyName("deliveryAddress")]
     public DeliveryAddressRequest? DeliveryAddress { get; set; }

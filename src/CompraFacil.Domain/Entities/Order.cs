@@ -4,10 +4,8 @@ using CompraFacil.Domain.ValueObjects;
 
 namespace CompraFacil.Domain.Entities;
 
-public class Order : AggregateRoot
+public sealed class Order : AggregateRoot
 {
-    public decimal TotalPrice { get; set; }
-
     public Customer? Customer { get; set; }
 
     public DeliveryAddress? DeliveryAddress { get; set; }
@@ -22,8 +20,14 @@ public class Order : AggregateRoot
 
     public DateTime CreatedAt { get; set; }
 
-    public void OrderCreatedAddEvent(OrderCreated orderCreated)
+    public decimal TotalPrice
     {
-        AddEvent(orderCreated);
+        get => GetTotalPrice();
     }
+
+    public void OrderCreatedAddEvent(OrderCreated orderCreated) =>
+        AddEvent(orderCreated);
+
+    private decimal GetTotalPrice() =>
+        Items?.Sum(item => item.Price) ?? 0;
 }

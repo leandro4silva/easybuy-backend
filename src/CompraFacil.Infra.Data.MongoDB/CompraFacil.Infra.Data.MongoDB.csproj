@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CompraFacil.Domain\CompraFacil.Domain.csproj" />
+    <ProjectReference Include="..\CompraFacil.Infra\CompraFacil.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

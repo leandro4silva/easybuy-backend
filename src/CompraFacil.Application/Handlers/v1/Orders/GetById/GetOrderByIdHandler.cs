@@ -19,7 +19,7 @@ public sealed class GetOrderByIdHandler : IRequestHandler<GetOrderByIdQuery, Get
 
     public async Task<GetOrderByIdResult> Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
     {
-        var order = await _orderRepository.GetByIdAsync(request.Id);
+        var order = await _orderRepository.GetByIdAsync(request.Id, cancellationToken);
 
         return _mapper.Map<GetOrderByIdResult>(order);
     }

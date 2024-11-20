@@ -1,12 +1,13 @@
-﻿using CompraFacil.Domain.Entities.Abstraction;
+﻿using CompraFacil.Domain.Events;
 
 namespace CompraFacil.Domain.Entities;
 
-public class Customer : IEntityBase
+public class Customer : AggregateRoot
 {
-    public Guid Id { get; set; }
-
     public string? FullName { get; set; }
 
     public string? Email { get; set; }
+
+    public void CreatedAddEvent(CustomerCreated customerCreated) =>
+        AddEvent(customerCreated);
 }

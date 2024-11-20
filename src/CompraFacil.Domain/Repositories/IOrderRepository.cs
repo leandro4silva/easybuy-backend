@@ -4,9 +4,9 @@ namespace CompraFacil.Domain.Repositories;
 
 public interface IOrderRepository
 {
-    Task<Order> GetByIdAsync(Guid id);
+    Task<Order> GetByIdAsync(Guid id, CancellationToken cancellationToken);
 
-    Task AddAsync(Order order);
+    Task AddAsync(Order order, CancellationToken cancellationToken);
 
-    Task UpdateAsync(Order order);
+    Task UpdateAsync(Order order, CancellationToken cancellationToken);
 }

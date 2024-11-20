@@ -10,6 +10,8 @@ public sealed class AppConfiguration
 
     public MongoDbConfiguration? MongoDb { get; set; }
 
+    public RabbitMqConfiguration? RabbitMq { get; set; }
+
     public string? Environment { get; set; }
 
     public bool IsDevelopment =>

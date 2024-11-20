@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CompraFacil.Api.Controllers.v1;
 
-[Route("api/[controller]")]
+[ApiVersion("1.0")]
+[Route("v{version:apiVersion}/orders")]
 [ApiController]
 public class OrdersController : ControllerBase
 {

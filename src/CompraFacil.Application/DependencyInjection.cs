@@ -1,4 +1,5 @@
 ﻿using CompraFacil.Application.Handlers.v1.Order.CreateOrder;
+using CompraFacil.Application.Mappers;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,9 +12,16 @@ public static class DependencyInjection
         #region MediatR
         
         services.AddMediatR(typeof(CreateOrderHandler));
+        services.AddAutoMapperProfiles();
 
         #endregion
 
+        return services;
+    }
+
+    private static IServiceCollection AddAutoMapperProfiles(this IServiceCollection services)
+    {
+        services.AddAutoMapper(typeof(OrderProfile));
         return services;
     }
 }

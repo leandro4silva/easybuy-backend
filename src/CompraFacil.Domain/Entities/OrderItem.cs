@@ -4,7 +4,7 @@ namespace CompraFacil.Domain.Entities;
 
 public class OrderItem : IEntityBase
 {
-    public Guid Id { get; set; }
+    public Guid Id { get; protected set; } = Guid.NewGuid();
 
     public Guid ProductId { get; set; }
 

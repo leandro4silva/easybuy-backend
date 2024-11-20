@@ -30,11 +30,11 @@ public sealed class CreateOrderHandler : IRequestHandler<CreateOrderCommand, Cre
 
         try
         {
-            await _orderRepository.AddAsync(order);
+            await _orderRepository.AddAsync(order, cancellationToken);
         }
         catch(Exception ex)
         {
-            var msg = "Erro indefinido no cadastro de usuario";
+            var msg = "Erro indefinido ao criar pedido";
             NotificationHelper.Notificar(ex, msg, _notificationService, _logger);
         }
 

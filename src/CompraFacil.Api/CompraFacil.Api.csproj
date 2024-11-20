@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CompraFacil.Application\CompraFacil.Application.csproj" />
     <ProjectReference Include="..\CompraFacil.Infra.Data.MongoDB\CompraFacil.Infra.Data.MongoDB.csproj" />
+    <ProjectReference Include="..\CompraFacil.Infra.MessageBus\CompraFacil.Infra.MessageBus.csproj" />
     <ProjectReference Include="..\CompraFacil.Infra\CompraFacil.Infrastructure.csproj" />
   </ItemGroup>
 

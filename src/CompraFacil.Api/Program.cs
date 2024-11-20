@@ -2,11 +2,14 @@ using CompraFacil.Application;
 using CompraFacil.Infrastructure;
 using CompraFacil.Infrastructure.Extensions;
 using CompraFacil.Infra.Data.MongoDB;
+using CompraFacil.Infra.MessageBus;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var appConfigs = builder.AddAppConfigs();
+
+await builder.Services.AddRabbitMqAsync(appConfigs);
 
 // Add services to the container.
 builder.Services.AddControllers()

@@ -3,6 +3,7 @@ using CompraFacil.Application.Handlers.v1.Order.CreateOrder;
 using CompraFacil.Application.Helpers;
 using CompraFacil.Domain.Events;
 using CompraFacil.Domain.Repositories;
+using CompraFacil.Infra.MessageBus.Abstraction;
 using CompraFacil.Infrastructure.Notifications.Abstraction;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -16,14 +17,20 @@ public sealed class CreateCustomerHandler : IRequestHandler<CreateCustomerComman
     private readonly ILogger<CreateOrderHandler> _logger;
     private readonly INotificationService _notificationService;
     private readonly IMapper _mapper;
+    private readonly IEventProcessor _eventProcessor;
 
     public CreateCustomerHandler(
-        ICustomerRepository customerRepository, ILogger<CreateOrderHandler> logger, INotificationService notificationService, IMapper mapper)
+        ICustomerRepository customerRepository, 
+        ILogger<CreateOrderHandler> logger, 
+        INotificationService notificationService, 
+        IMapper mapper,
+        IEventProcessor eventProcessor)
     {
         _customerRepository = customerRepository;
         _logger = logger;
         _notificationService = notificationService;
         _mapper = mapper;
+        _eventProcessor = eventProcessor;
     }
 
     public async Task<CreateCustomerResult> Handle(CreateCustomerCommand request, CancellationToken cancellationToken)
@@ -38,7 +45,7 @@ public sealed class CreateCustomerHandler : IRequestHandler<CreateCustomerComman
 
             await _customerRepository.AddAsync(customer, cancellationToken);
 
-
+            _eventProcessor.Process(customer.Events, cancellationToken);
         }
         catch (Exception ex)
         {

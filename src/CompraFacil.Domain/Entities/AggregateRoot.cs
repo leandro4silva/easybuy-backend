@@ -11,10 +11,8 @@ public class AggregateRoot : IEntityBase
 
     public IEnumerable<IDomainEvent> Events => _events;
 
-    protected void AddEvent(IDomainEvent @event){
-        if (@event != null)
-            _events.Add(@event);
-            
-        _events = new List<IDomainEvent>();
+    protected void AddEvent(IDomainEvent @event)
+    {
+        _events.Add(@event);
     }
 }

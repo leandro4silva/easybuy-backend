@@ -3,14 +3,15 @@ using RabbitMQ.Client;
 using System.Text;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using CompraFacil.Infra.MessageBus.Connections;
 
 namespace CompraFacil.Infra.MessageBus.Clients;
 
 public sealed class RabbitMqClient : IMessageBusClient
 {
-    private readonly IConnectionFactory _connection;
+    private readonly ProducerConnection _connection;
 
-    public RabbitMqClient(IConnectionFactory connection)
+    public RabbitMqClient(ProducerConnection connection)
     {
         _connection = connection;
     }
@@ -22,8 +23,7 @@ public sealed class RabbitMqClient : IMessageBusClient
             routingKey = routingKey.Replace("-integration", "");
         }
 
-        var connection = await _connection.CreateConnectionAsync(cancellationToken);
-        var channel = await connection.CreateChannelAsync(cancellationToken: cancellationToken);
+        var channel = await _connection.Connection.CreateChannelAsync(cancellationToken: cancellationToken);
 
         var settings = new JsonSerializerSettings
         {

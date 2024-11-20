@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using CompraFacil.Domain.Events;
+﻿using CompraFacil.Domain.Events;
 using CompraFacil.Domain.Events.Abstraction;
 using CompraFacil.Infra.MessageBus.Abstraction;
 using CompraFacil.Infra.MessageBus.IntegrationEvents;
@@ -10,13 +9,11 @@ namespace CompraFacil.Infra.MessageBus.Event;
 public sealed class EventProcessor : IEventProcessor
 {
     private readonly IMessageBusClient _bus;
-    private readonly IMapper _mapper;
 
     public EventProcessor(
-        IMessageBusClient bus, IMapper mapper)
+        IMessageBusClient bus)
     {
         _bus = bus;
-        _mapper = mapper;
     }
 
     public IEnumerable<IEvent> MapAll(IEnumerable<IDomainEvent> events)
@@ -28,18 +25,18 @@ public sealed class EventProcessor : IEventProcessor
     {
         return @event switch
         {
-            CustomerCreated e => _mapper.Map<CustomerCreatedIntegration>(e),
+            CustomerCreated e => new CustomerCreatedIntegration(e.Id, e.FullName, e.Email),
             _ => throw new InvalidOperationException($"Evento não suportado: {@event.GetType().Name}")
         };
     }
 
-    public void Process(IEnumerable<IDomainEvent> events)
+    public async void Process(IEnumerable<IDomainEvent> events, CancellationToken cancellationToken)
     {
         var integrationEvents = MapAll(events);
 
         foreach (var @event in integrationEvents)
         {
-            _bus.Publish(@event, MapConvention(@event), "customer-service");
+            await _bus.PublishAsync(@event, MapConvention(@event), "customer-service", cancellationToken);
         }
     }
 

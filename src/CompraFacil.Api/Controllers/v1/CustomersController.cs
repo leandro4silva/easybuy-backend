@@ -19,7 +19,6 @@ public class CustomersController : ControllerBase
         _mediator = mediator;
     }
 
-
     [HttpPost]
     [ProducesResponseType(typeof(BaseResponse<CreateCustomerResult>), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
@@ -29,6 +28,6 @@ public class CustomersController : ControllerBase
     {
         var response = await _mediator.Send(request, cancellationToken);
 
-        return response is not null ? CreatedAtAction(nameof(Post), request) : NoContent();
+        return response is not null ? CreatedAtAction(nameof(Post), response) : NoContent();
     }
 }

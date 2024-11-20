@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CompraFacil.Domain\CompraFacil.Domain.csproj" />
+    <ProjectReference Include="..\CompraFacil.Infra.MessageBus\CompraFacil.Infra.MessageBus.csproj" />
     <ProjectReference Include="..\CompraFacil.Infra\CompraFacil.Infrastructure.csproj" />
   </ItemGroup>
 

@@ -15,7 +15,9 @@ public static class DependencyInjection
         var connectionFactory = new ConnectionFactory
         {
             HostName = appConfiguration.RabbitMq?.HostName!,
-            Port = 
+            Port = appConfiguration.RabbitMq!.Port,
+            UserName = appConfiguration.RabbitMq.User!,
+            Password = appConfiguration.RabbitMq.Password!
         };
 
         var connection = await connectionFactory.CreateConnectionAsync("customers-service-producer");

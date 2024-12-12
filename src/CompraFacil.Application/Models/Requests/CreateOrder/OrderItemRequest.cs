@@ -1,7 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json.Serialization;
 
 namespace CompraFacil.Application.Models.Requests.CreateOrder;
 
+[ExcludeFromCodeCoverage]
 public sealed class OrderItemRequest
 {
     [JsonPropertyName("id")]

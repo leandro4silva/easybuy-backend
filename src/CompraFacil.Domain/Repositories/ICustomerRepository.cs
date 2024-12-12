@@ -1,8 +1,8 @@
-﻿using CompraFacil.Domain.Entities;
+﻿using DomainEntity = CompraFacil.Domain.Entities;
 
 namespace CompraFacil.Domain.Repositories;
 
 public interface ICustomerRepository
 {
-    Task AddAsync(Customer customer, CancellationToken cancellationToken);
+    Task AddAsync(DomainEntity.Customer customer, CancellationToken cancellationToken);
 }

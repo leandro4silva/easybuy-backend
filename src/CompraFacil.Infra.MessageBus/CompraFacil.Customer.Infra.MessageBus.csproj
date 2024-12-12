@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CompraFacil.Domain\CompraFacil.Domain.csproj" />
-    <ProjectReference Include="..\CompraFacil.Infra\CompraFacil.Infrastructure.csproj" />
+    <ProjectReference Include="..\CompraFacil.Domain\CompraFacil.Customer.Domain.csproj" />
+    <ProjectReference Include="..\CompraFacil.Infra\CompraFacil.Customer.Infra.csproj" />
   </ItemGroup>
 
 </Project>

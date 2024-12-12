@@ -1,4 +1,4 @@
-﻿using CompraFacil.Domain.Entities;
+﻿using DomainEntity = CompraFacil.Domain.Entities;
 using CompraFacil.Domain.Entities.Abstraction;
 using CompraFacil.Domain.Repositories;
 using CompraFacil.Infra.Data.MongoDB.Repositories;
@@ -39,8 +39,8 @@ public static class DependencyInjection
 
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddMongoRepository<Customer>("customers");
-        services.AddMongoRepository<Order>("orders");
+        services.AddMongoRepository<DomainEntity.Customer>("customers");
+        services.AddMongoRepository<DomainEntity.Order>("orders");
 
         services.AddScoped<IOrderRepository, OrderRepository>();
         services.AddScoped<ICustomerRepository, CustomerRespository>();

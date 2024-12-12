@@ -1,5 +1,8 @@
-﻿namespace CompraFacil.Application.Models.Requests.CreateOrder;
+﻿using System.Diagnostics.CodeAnalysis;
 
+namespace CompraFacil.Application.Models.Requests.CreateOrder;
+
+[ExcludeFromCodeCoverage]
 public sealed class PaymentInfoRequest
 {
     public string? CardNumber { get; set; }

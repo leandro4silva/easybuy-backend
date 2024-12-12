@@ -5,22 +5,22 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89FCEF52-7A07-4B1E-877E-1837C3C1A6A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Api", "src\CompraFacil.Api\CompraFacil.Api.csproj", "{71008192-4D2A-4239-8B2B-4F0FB96E1C9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Customer.Api", "src\CompraFacil.Api\CompraFacil.Customer.Api.csproj", "{71008192-4D2A-4239-8B2B-4F0FB96E1C9C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Domain", "src\CompraFacil.Domain\CompraFacil.Domain.csproj", "{CD88BD71-3B42-4642-956F-DC3A8917C0C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Customer.Domain", "src\CompraFacil.Domain\CompraFacil.Customer.Domain.csproj", "{CD88BD71-3B42-4642-956F-DC3A8917C0C8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Application", "src\CompraFacil.Application\CompraFacil.Application.csproj", "{9FCE7F50-A4E9-4666-AFE5-B1D70E3F0D3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Customer.Application", "src\CompraFacil.Application\CompraFacil.Customer.Application.csproj", "{9FCE7F50-A4E9-4666-AFE5-B1D70E3F0D3D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Infrastructure", "src\CompraFacil.Infra\CompraFacil.Infrastructure.csproj", "{90929958-4008-4A88-9B0F-29A695DBF7D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Customer.Infra", "src\CompraFacil.Infra\CompraFacil.Customer.Infra.csproj", "{90929958-4008-4A88-9B0F-29A695DBF7D1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Infra.Data.MongoDB", "src\CompraFacil.Infra.Data.MongoDB\CompraFacil.Infra.Data.MongoDB.csproj", "{4B9D391B-DD3E-4FCD-9531-2E24A8A40D55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Customer.Infra.Data.MongoDB", "src\CompraFacil.Infra.Data.MongoDB\CompraFacil.Customer.Infra.Data.MongoDB.csproj", "{4B9D391B-DD3E-4FCD-9531-2E24A8A40D55}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{15E4A019-041E-4E32-97A7-0D9AB5D4240C}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yaml = docker-compose.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompraFacil.Infra.MessageBus", "src\CompraFacil.Infra.MessageBus\CompraFacil.Infra.MessageBus.csproj", "{7076EEFD-967B-45CD-AAF9-BEA1E34E5AC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CompraFacil.Customer.Infra.MessageBus", "src\CompraFacil.Infra.MessageBus\CompraFacil.Customer.Infra.MessageBus.csproj", "{7076EEFD-967B-45CD-AAF9-BEA1E34E5AC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

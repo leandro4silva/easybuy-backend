@@ -1,5 +1,4 @@
-﻿using Amazon.Runtime.Internal;
-using CompraFacil.Application.Common.Models;
+﻿using CompraFacil.Application.Common.Models;
 using CompraFacil.Application.Handlers.v1.Order.CreateOrder;
 using CompraFacil.Application.Handlers.v1.Order.GetOrderById;
 using MediatR;
@@ -21,8 +20,8 @@ public class OrdersController : ControllerBase
 
     [HttpGet("{id}")]
     [ProducesResponseType(typeof(BaseResponse<GetOrderByIdResult>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> Get(
         GetOrderByIdQuery request, CancellationToken cancellationToken)
     {
@@ -33,8 +32,8 @@ public class OrdersController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(typeof(BaseResponse<CreateOrderResult>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> Post(
         CreateOrderCommand request, CancellationToken cancellationToken)
     {

@@ -1,7 +1,5 @@
-﻿using Amazon.Runtime.Internal;
-using CompraFacil.Application.Common.Models;
+﻿using CompraFacil.Application.Common.Models;
 using CompraFacil.Application.Handlers.v1.Customers.Create;
-using CompraFacil.Application.Handlers.v1.Order.CreateOrder;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,8 +19,8 @@ public class CustomersController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(typeof(BaseResponse<CreateCustomerResult>), StatusCodes.Status200OK)]
-    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(typeof(ErrorResponse), StatusCodes.Status500InternalServerError)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> Post(
         CreateCustomerCommand request, CancellationToken cancellationToken)
     {

@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CompraFacil.Application\CompraFacil.Application.csproj" />
-    <ProjectReference Include="..\CompraFacil.Infra.Data.MongoDB\CompraFacil.Infra.Data.MongoDB.csproj" />
-    <ProjectReference Include="..\CompraFacil.Infra.MessageBus\CompraFacil.Infra.MessageBus.csproj" />
-    <ProjectReference Include="..\CompraFacil.Infra\CompraFacil.Infrastructure.csproj" />
+    <ProjectReference Include="..\CompraFacil.Application\CompraFacil.Customer.Application.csproj" />
+    <ProjectReference Include="..\CompraFacil.Infra.Data.MongoDB\CompraFacil.Customer.Infra.Data.MongoDB.csproj" />
+    <ProjectReference Include="..\CompraFacil.Infra.MessageBus\CompraFacil.Customer.Infra.MessageBus.csproj" />
+    <ProjectReference Include="..\CompraFacil.Infra\CompraFacil.Customer.Infra.csproj" />
   </ItemGroup>
 
 </Project>

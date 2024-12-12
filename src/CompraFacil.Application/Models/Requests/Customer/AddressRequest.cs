@@ -1,22 +1,22 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
-namespace CompraFacil.Application.Models.Requests.CreateOrder;
+namespace CompraFacil.Customer.Application.Models.Requests.Customer;
 
 [ExcludeFromCodeCoverage]
-public sealed class PaymentAddressRequest
+public sealed class AddressRequest
 {
     [JsonPropertyName("street")]
-    public string? Street { get; set; }
+    public string? Street { get; private set; }
 
     [JsonPropertyName("number")]
-    public string? Number { get; set; }
+    public string? Number { get; private set; }
 
     [JsonPropertyName("city")]
-    public string? City { get; set; }
+    public string? City { get; private set; }
 
     [JsonPropertyName("state")]
-    public string? State { get; set; }
+    public string? State { get; private set; }
 
     [JsonPropertyName("zipCode")]
     public string? ZipCode { get; set; }
